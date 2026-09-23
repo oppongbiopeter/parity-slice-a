@@ -1,0 +1,4 @@
+.grok/
+.previewdocs/
+*.tmp
+.DS_Store

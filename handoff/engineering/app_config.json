@@ -1,0 +1,82 @@
+{
+  "product": {
+    "workingTitle": "PARITY",
+    "slice": "A",
+    "version": "0.1.0",
+    "autoExCompiledIn": false,
+    "institutionCompiledIn": false,
+    "vendorHoldsClientMoney": false,
+    "hftCompiledIn": false,
+    "triangleBoardCompiledIn": true
+  },
+  "countryPacks": {
+    "GH": {
+      "ibkrAdapter": true,
+      "liveKeys": false,
+      "liveLockReason": "COUNSEL-GH-001 pending",
+      "bureauSend": false
+    },
+    "NG": {
+      "ibkrAdapter": false,
+      "liveKeys": false,
+      "liveLockReason": "IBKR does not accept Nigeria",
+      "bureauSend": false
+    },
+    "KE": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false },
+    "ZA": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false },
+    "OTHER": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false }
+  },
+  "limitsPersonal": {
+    "paperTicketsBeforeLiveUnlock": 20,
+    "productCeilingTicketUsd": 10000,
+    "defaultOwnerTicketUsd": 5000,
+    "productCeilingDailyUsd": 25000,
+    "defaultOwnerDailyUsd": 10000,
+    "quoteAgeSeconds": 3,
+    "defaultSessionLossDisableUsd": 300,
+    "defaultSessionEndHourAccra": 21,
+    "cipGateBp": 20,
+    "maxDestinations": 1
+  },
+  "ibkr": {
+    "path": "A1_user_gateway",
+    "defaultGateway": "https://192.168.1.10:5000",
+    "placeOrderPath": "/v1/api/iserver/account/{accountId}/orders",
+    "paperAccountPrefix": "DU",
+    "allowedOrderTypes": ["MKT", "LMT"],
+    "allowedTif": ["DAY"],
+    "refuse": ["GTC", "parentId", "conidex", "strategy", "outsideRTH", "cashQty+quantity"]
+  },
+  "snapshotDefaults_2026_09_23": {
+    "spotGhsPerUsd": 11.58,
+    "placeholderForward": 11.7,
+    "rGhs91": 0.04805,
+    "rUsd3m": 0.0413,
+    "rGhsInterbank": 0.102,
+    "rUsdBorrow": 0.055,
+    "frictionIbkr": 0.0008,
+    "days": 91
+  },
+  "triangle": {
+    "bothDirections": true,
+    "useBidAskOnly": true,
+    "sendRequiresMMinusOneGreaterThanFees": true,
+    "quoteMaxAgeSeconds": 3,
+    "hftBurstSend": false
+  },
+  "settlement": {
+    "ghanaInterbankSpot": "T+2 unless otherwise agreed",
+    "bogAuction": "T+2 after allotment",
+    "confirmMinutes": 5,
+    "indicativeQuoteMaxMinutes": 30,
+    "confirmationLetterHours": 24,
+    "bureauCash": "T+0 notes — not the same instrument as interbank",
+    "remittanceCreditHours": 24,
+    "sendRules": {
+      "sameRailRequired": true,
+      "bureauVsInterbank": "BLOCK",
+      "bothIbkrPaper": "ALLOW_PAPER",
+      "ghanaLiveInterbank": "WATCH_ONLY_UNTIL_COUNSEL"
+    }
+  }
+}

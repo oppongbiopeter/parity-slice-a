@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: PARITY pricing engine (in-process)
+  version: "1.0.0"
+  description: >
+    Not a public HTTP API in Slice A. These contracts are the Dart/Kotlin function
+    signatures the UI calls.
+servers:
+  - url: in-process://parity.engine
+paths:
+  /preview:
+    post:
+      operationId: previewOutcome
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PreviewRequest"
+      responses:
+        "200":
+          description: Preview
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PreviewResponse"
+  /triangle:
+    post:
+      operationId: priceTriangle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TriangleRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TriangleResponse"
+components:
+  schemas:
+    PreviewRequest:
+      type: object
+      required: [sizeUsd, spotGhsPerUsd, rGhs, rUsd, days, friction]
+      properties:
+        sizeUsd: { type: number }
+        spotGhsPerUsd: { type: number }
+        liveForward: { type: number }
+        rGhs: { type: number }
+        rUsd: { type: number }
+        days: { type: integer }
+        friction: { type: number }
+        mode: { type: string, enum: [PAPER, LIVE-LOCKED, LIVE] }
+    PreviewResponse:
+      type: object
+      properties:
+        headline: { type: string }
+        sentence: { type: string }
+        lockedUsd: { type: number }
+        decision: { type: string, enum: [NO_SEND, HUMAN_SEND_ONLY, AUTO_MAY_FIRE] }
+    TriangleRequest:
+      type: object
+      properties:
+        usdBid: { type: number }
+        usdAsk: { type: number }
+        notionalUsd: { type: number }
+        feeFrac: { type: number }
+    TriangleResponse:
+      type: object
+      properties:
+        decision: { type: string }
+        netGhs: { type: number }
