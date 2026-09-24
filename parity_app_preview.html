@@ -3,11 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PARITY — app preview</title>
+<title>PARITY preview</title>
+<style>
+ body{font-family:Segoe UI,Arial,sans-serif;max-width:42rem;margin:40px auto;padding:0 20px;color:#1A1A1A;background:#F7F5F0}
+ a{color:#1B365D}
+ .box{background:#fff;border:1px solid #D4CFC4;border-radius:12px;padding:16px;margin:16px 0}
+ code{background:#E8F1FB;padding:2px 6px;border-radius:4px}
+</style>
 </head>
 <body>
-<p>Full preview lives in the project artifacts folder as <code>parity_app_preview.html</code> (26 KB). Re-copy from artifacts if this stub is all that uploaded.</p>
-<p>Open the local file for Triangle, Settle (T+2 vs bureau T+0), Ticket, and Kill.</p>
-<p>Repo: private. No custody. Paper only.</p>
+<h1>PARITY</h1>
+<p>The full clickable phone preview is the file <code>parity_app_preview.html</code> in the project artifacts folder (about 40 KB). GitHub’s file tool could not take that whole binary-safe payload in one commit from here.</p>
+<div class="box">
+<p><b>Copy it onto this repo from your machine:</b></p>
+<pre>git clone https://github.com/oppongbiopeter/parity-slice-a.git
+cp /path/to/artifacts/parity_app_preview.html .
+git add parity_app_preview.html README.md
+git commit -m "Add full preview"
+git push</pre>
+</div>
+<div class="box">
+<p><b>Demo logins</b></p>
+<p>Personal PIN <code>123456</code><br>
+Desk bank <code>GCB</code> / staff <code>DEALER01</code> / PIN <code>123456</code></p>
+<p>Read <a href="README.md">README.md</a> first. The app never holds money, bills, or coins.</p>
+</div>
 </body>
 </html>
