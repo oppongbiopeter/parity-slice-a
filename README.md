@@ -6,17 +6,16 @@ A phone-sized board that answers one question:
 
 It is software. It is not a bank, not a fund, and not a wallet.
 
-- Preview: [parity_app_preview.html](parity_app_preview.html) (needs the three `.js` files beside it)
-- [FAQ](FAQ.md)
-- [User guide](USER_GUIDE.md)
-- [System guides](GUIDES.md)
+- Preview: [parity_app_preview.html](parity_app_preview.html)
+- [FAQ](FAQ.md) · [User guide](USER_GUIDE.md) · [System guides](GUIDES.md)
+- [Tutor and who pays](MONETIZATION.md)
 
 ## Who it is for
 
-- Individual — PIN `123456`. Connect a broker you already own. Paper send only.
-- Desk — bank `GCB` / staff `DEALER01` / PIN `123456`. Own books.
-- Watch only — calculator. Nothing sends.
+- Individual — PIN `123456`. Broker you already own. Paper send only.
+- Desk — `GCB` / `DEALER01` / `123456`. Own books.
+- Watch only — calculator.
 
-Same instrument. Same clock. Outcome ticked. Paper armed. Most days: no trade.
+Tutor (paid in the live app) explains the board. It cannot send or invent a price.
 
 Ghana BoG + SEC first. MiFID is the grammar, not the licence.
