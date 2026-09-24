@@ -4,8 +4,77 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PARITY</title>
+<style>
+  :root {
+    --navy:#1B365D; --teal:#0F6E6B; --ink:#1A1A1A; --muted:#5C6570;
+    --paper:#F7F5F0; --card:#FFFFFF; --line:#D4CFC4; --red:#9B2C2C;
+    --green:#1F7A4D; --input:#E8F1FB; --bad:#F8D7D4; --ok:#D8EDE4; --warn:#F4E4B3;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Segoe UI",Calibri,Arial,sans-serif; background:#cfc8bc; color:var(--ink); }
+  .stage { min-height:100vh; display:flex; gap:24px; justify-content:center; align-items:flex-start; padding:24px 16px 40px; flex-wrap:wrap; }
+  .meta { width:300px; max-width:100%; }
+  .meta h1 { font-size:22px; color:var(--navy); margin:0 0 6px; }
+  .meta p { font-size:13px; color:var(--muted); line-height:1.45; margin:0 0 10px; }
+  .tag { display:inline-block; background:var(--navy); color:#fff; font-size:11px; padding:3px 8px; border-radius:99px; margin-bottom:8px; }
+  .navlist button { width:100%; text-align:left; border:1px solid var(--line); background:#fff; padding:7px 10px; margin-bottom:5px; border-radius:8px; cursor:pointer; font-size:12px; color:var(--navy); }
+  .navlist button.on { background:var(--navy); color:#fff; }
+  .phone { width:390px; height:780px; background:#111; border-radius:36px; padding:12px; box-shadow:0 24px 60px rgba(0,0,0,.28); }
+  .bezel { background:var(--paper); height:100%; border-radius:28px; overflow:hidden; display:flex; flex-direction:column; position:relative; }
+  .status { height:26px; display:flex; justify-content:space-between; align-items:center; padding:0 16px; font-size:11px; color:var(--muted); }
+  .appbar { padding:2px 16px 8px; border-bottom:1px solid var(--line); }
+  .appbar .brand { font-size:10px; color:var(--teal); font-weight:700; letter-spacing:.04em; }
+  .appbar h2 { margin:2px 0 0; font-size:16px; color:var(--navy); }
+  .who { font-size:11px; color:var(--muted); }
+  .scroll { flex:1; overflow:auto; padding:12px 16px 88px; }
+  .tabbar { position:absolute; left:0; right:0; bottom:0; height:64px; background:#fff; border-top:1px solid var(--line); display:flex; }
+  .tabbar button { flex:1; border:0; background:transparent; color:var(--muted); font-size:10px; cursor:pointer; }
+  .tabbar button.on { color:var(--navy); font-weight:700; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; margin-bottom:10px; }
+  .banner { border-radius:10px; padding:10px 12px; font-size:13px; font-weight:700; margin-bottom:10px; }
+  .banner.bad { background:var(--bad); color:var(--red); }
+  .banner.ok { background:var(--ok); color:var(--green); }
+  .banner.warn { background:var(--warn); color:#6a4b00; }
+  .banner.navy { background:var(--navy); color:#fff; }
+  .row { display:flex; justify-content:space-between; gap:8px; font-size:13px; margin:6px 0; }
+  .k { color:var(--muted); }
+  .v { color:var(--navy); font-weight:650; text-align:right; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  label.chk { display:flex; gap:8px; font-size:13px; margin:8px 0; align-items:flex-start; }
+  input, select { width:100%; padding:9px 10px; border-radius:8px; border:1px solid var(--line); background:var(--input); color:var(--navy); font-size:14px; margin-bottom:8px; }
+  .fld span { display:block; font-size:11px; color:var(--muted); margin-bottom:3px; }
+  .btn { display:block; width:100%; border:0; border-radius:10px; padding:12px; font-size:14px; font-weight:700; cursor:pointer; margin-top:8px; }
+  .btn.primary { background:var(--navy); color:#fff; }
+  .btn.ghost { background:#fff; color:var(--navy); border:1.5px solid var(--navy); }
+  .btn.danger { background:var(--red); color:#fff; }
+  .btn.dead { background:#B8B2A6; color:#fff; cursor:not-allowed; }
+  .muted { color:var(--muted); font-size:12px; line-height:1.4; }
+  .tiny { font-size:11px; color:var(--muted); }
+  .hide { display:none !important; }
+  .err { color:var(--red); font-size:12px; margin:6px 0; }
+</style>
 </head>
 <body>
-<p>Placeholder will be replaced if this succeeds; checking push_files size limits.</p>
+<div class="stage">
+  <aside class="meta">
+    <div class="tag">ONE APP · ALL PARTIES</div>
+    <h1>PARITY</h1>
+    <p>Personal PIN, institution desk, or watch-only. Demo PIN <b>123456</b>. Institution bank <b>GCB</b> / staff <b>DEALER01</b>.</p>
+    <div class="navlist" id="nav"></div>
+  </aside>
+  <div class="phone">
+    <div class="bezel">
+      <div class="status"><span>PARITY</span><span>Accra</span></div>
+      <div class="appbar">
+        <div class="brand" id="brand">PARITY</div>
+        <h2 id="title">Welcome</h2>
+        <div class="who" id="who">Not signed in</div>
+      </div>
+      <div class="scroll" id="screen"></div>
+      <div class="tabbar" id="tabs"></div>
+    </div>
+  </div>
+</div>
+<script src="parity_app_preview.js"></script>
 </body>
 </html>
