@@ -1,21 +1,29 @@
 # PARITY
 
-A phone-sized board that answers one question:
+Board, not a bank. Never holds cedis, dollars, bills, or coins.
 
-**If I put money on this trade, what happens — and is that number actually locked?**
+**If I put money on this trade, what happens — and is that number locked?**
 
-It is software. It is not a bank, not a fund, and not a wallet.
+## Preview
 
-- Preview: [parity_app_preview.html](parity_app_preview.html)
-- [FAQ](FAQ.md) · [User guide](USER_GUIDE.md) · [System guides](GUIDES.md)
-- [Tutor and who pays](MONETIZATION.md)
+Full clickable mock: `parity_app_preview.html` in the project artifacts folder (single file).
+This repo keeps a split HTML + JS copy that may lag that file.
 
-## Who it is for
+Demo doors:
 
-- Individual — PIN `123456`. Broker you already own. Paper send only.
-- Desk — `GCB` / `DEALER01` / `123456`. Own books.
-- Watch only — calculator.
+- Individual — PIN `123456`
+- Desk — `GCB` / `DEALER01` / `123456`
+- Org admin — `GCB` / `ADMIN01` / `123456`
+- Super admin — `SUPER` / `123456` (cannot send)
+- Watch — no PIN
 
-Tutor (paid in the live app) explains the board. It cannot send or invent a price.
+## Docs in this repo
 
-Ghana BoG + SEC first. MiFID is the grammar, not the licence.
+- [FAQ](FAQ.md) · [User guide](USER_GUIDE.md) · [Guides](GUIDES.md)
+- [Monetization / tutor](MONETIZATION.md)
+- [Database](DATABASE.md)
+- [Architecture](ARCHITECTURE.md)
+
+Word files and the zip stay in the project folder (GitHub text API does not take those binaries cleanly).
+
+Same instrument. Same clock. Outcome first. No custody. Ghana law first.
