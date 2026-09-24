@@ -3,73 +3,22 @@
     "workingTitle": "PARITY",
     "slice": "A",
     "version": "0.1.0",
-    "autoExCompiledIn": false,
-    "institutionCompiledIn": false,
     "vendorHoldsClientMoney": false,
     "hftCompiledIn": false,
     "triangleBoardCompiledIn": true,
     "bondBoardCompiledIn": true,
-    "bondFuturesCompiledIn": false,
     "cryptoBoardCompiledIn": true,
     "cryptoLiveSendGH": false
   },
+  "pipes": {
+    "borrowed": ["quoteAgeClock", "recipientGetsPreview", "versusBankSpread", "papssAsSettlementRail", "corridorStatusPack"],
+    "refused": ["vendorMultiCurrencyAccounts", "localCollectionsInOurName", "guaranteedPayout", "usdcBridgeCustody", "honour60sRateAsPrincipal"]
+  },
   "countryPacks": {
-    "GH": { "ibkrAdapter": true, "liveKeys": false, "liveLockReason": "COUNSEL-GH-001 pending", "bureauSend": false },
-    "NG": { "ibkrAdapter": false, "liveKeys": false, "liveLockReason": "IBKR does not accept Nigeria", "bureauSend": false },
-    "KE": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false },
-    "ZA": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false },
-    "OTHER": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false }
-  },
-  "limitsPersonal": {
-    "paperTicketsBeforeLiveUnlock": 20,
-    "productCeilingTicketUsd": 10000,
-    "defaultOwnerTicketUsd": 5000,
-    "productCeilingDailyUsd": 25000,
-    "defaultOwnerDailyUsd": 10000,
-    "quoteAgeSeconds": 3,
-    "defaultSessionLossDisableUsd": 300,
-    "defaultSessionEndHourAccra": 21,
-    "cipGateBp": 20,
-    "maxDestinations": 1
-  },
-  "ibkr": {
-    "path": "A1_user_gateway",
-    "defaultGateway": "https://192.168.1.10:5000",
-    "placeOrderPath": "/v1/api/iserver/account/{accountId}/orders",
-    "paperAccountPrefix": "DU",
-    "allowedOrderTypes": ["MKT", "LMT"],
-    "allowedTif": ["DAY"],
-    "refuse": ["GTC", "parentId", "conidex", "strategy", "outsideRTH", "cashQty+quantity"]
-  },
-  "triangle": {
-    "bothDirections": true,
-    "useBidAskOnly": true,
-    "sendRequiresMMinusOneGreaterThanFees": true,
-    "quoteMaxAgeSeconds": 3,
-    "hftBurstSend": false
-  },
-  "settlement": {
-    "ghanaInterbankSpot": "T+2 unless otherwise agreed",
-    "bogAuction": "T+2 after allotment",
-    "bureauCash": "T+0 notes",
-    "sendRules": {
-      "sameRailRequired": true,
-      "bureauVsInterbank": "BLOCK",
-      "bothIbkrPaper": "ALLOW_PAPER",
-      "ghanaLiveInterbank": "WATCH_ONLY_UNTIL_COUNSEL"
-    }
-  },
-  "bond": {
-    "venues": ["GFIM", "CSD"],
-    "vendorHoldsBonds": false,
-    "eurobondSameInstrument": false,
-    "bondFuturesBasis": "LOCKED_NO_LIQUID_GH_FUTURE"
-  },
-  "crypto": {
-    "vendorHoldsCoins": false,
-    "byoExchangeKeys": true,
-    "fundingIsNotLocked": true,
-    "onChainVsCex": "BLOCK",
-    "ghanaLiveSend": "LOCKED_COUNSEL"
+    "GH": { "liveKeys": false },
+    "NG": { "ibkrAdapter": false },
+    "KE": { "liveKeys": false },
+    "ZA": { "liveKeys": false },
+    "EU": { "blocked": true }
   }
 }
