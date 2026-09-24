@@ -7,21 +7,15 @@
     "institutionCompiledIn": false,
     "vendorHoldsClientMoney": false,
     "hftCompiledIn": false,
-    "triangleBoardCompiledIn": true
+    "triangleBoardCompiledIn": true,
+    "bondBoardCompiledIn": true,
+    "bondFuturesCompiledIn": false,
+    "cryptoBoardCompiledIn": true,
+    "cryptoLiveSendGH": false
   },
   "countryPacks": {
-    "GH": {
-      "ibkrAdapter": true,
-      "liveKeys": false,
-      "liveLockReason": "COUNSEL-GH-001 pending",
-      "bureauSend": false
-    },
-    "NG": {
-      "ibkrAdapter": false,
-      "liveKeys": false,
-      "liveLockReason": "IBKR does not accept Nigeria",
-      "bureauSend": false
-    },
+    "GH": { "ibkrAdapter": true, "liveKeys": false, "liveLockReason": "COUNSEL-GH-001 pending", "bureauSend": false },
+    "NG": { "ibkrAdapter": false, "liveKeys": false, "liveLockReason": "IBKR does not accept Nigeria", "bureauSend": false },
     "KE": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false },
     "ZA": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false },
     "OTHER": { "ibkrAdapter": true, "liveKeys": false, "bureauSend": false }
@@ -47,16 +41,6 @@
     "allowedTif": ["DAY"],
     "refuse": ["GTC", "parentId", "conidex", "strategy", "outsideRTH", "cashQty+quantity"]
   },
-  "snapshotDefaults_2026_09_23": {
-    "spotGhsPerUsd": 11.58,
-    "placeholderForward": 11.7,
-    "rGhs91": 0.04805,
-    "rUsd3m": 0.0413,
-    "rGhsInterbank": 0.102,
-    "rUsdBorrow": 0.055,
-    "frictionIbkr": 0.0008,
-    "days": 91
-  },
   "triangle": {
     "bothDirections": true,
     "useBidAskOnly": true,
@@ -67,16 +51,25 @@
   "settlement": {
     "ghanaInterbankSpot": "T+2 unless otherwise agreed",
     "bogAuction": "T+2 after allotment",
-    "confirmMinutes": 5,
-    "indicativeQuoteMaxMinutes": 30,
-    "confirmationLetterHours": 24,
-    "bureauCash": "T+0 notes — not the same instrument as interbank",
-    "remittanceCreditHours": 24,
+    "bureauCash": "T+0 notes",
     "sendRules": {
       "sameRailRequired": true,
       "bureauVsInterbank": "BLOCK",
       "bothIbkrPaper": "ALLOW_PAPER",
       "ghanaLiveInterbank": "WATCH_ONLY_UNTIL_COUNSEL"
     }
+  },
+  "bond": {
+    "venues": ["GFIM", "CSD"],
+    "vendorHoldsBonds": false,
+    "eurobondSameInstrument": false,
+    "bondFuturesBasis": "LOCKED_NO_LIQUID_GH_FUTURE"
+  },
+  "crypto": {
+    "vendorHoldsCoins": false,
+    "byoExchangeKeys": true,
+    "fundingIsNotLocked": true,
+    "onChainVsCex": "BLOCK",
+    "ghanaLiveSend": "LOCKED_COUNSEL"
   }
 }
